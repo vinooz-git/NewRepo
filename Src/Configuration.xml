@@ -1,0 +1,17 @@
+<configuration>
+  <GeneralDetails>
+    <add key="ProjectName" value="PACS" />
+  </GeneralDetails>
+  <VMSetup>
+    <Server host="pa-tst5-w16" network ="NEPTUNE" actions="VmPowerOn" snap="" />
+    <Server host="pa-tst4-ws16" network ="NEPTUNE" actions="VmPowerOn" snap="" />
+  </VMSetup>
+  <ServerSetup>
+    <Server host="pa-tst5-w16" actions="BuildDownlod" BuildURL ="https://ica-build-w2016.products.network.internal:8443" BuildJob = "iCA_Python" BuildOutloc ="C:\PACS_build\8_1_0"  />
+    <Server host="pa-tst5-ws16" actions="BuildDownlod,BuildInstall" BuildURL ="https://ica-build-w2016.products.network.internal:8443" BuildOutloc ="C:\PACS_build\8_1_0" InstallFile = "C:\imgdrv\Supdate.pl" />
+  </ServerSetup>
+  <EmailSettings>
+    <add key="RecipientList" value="sivan.arunachalam@ravsoftsolutions.com" />
+    <Server host="pa-tst4-ws16" network ="Neptune" actions="VmPowerOff" snap="" />
+  </EmailSettings>
+</configuration>
