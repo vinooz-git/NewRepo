@@ -99,13 +99,13 @@ pipeline {
              }
           }
         }
-	stage('CheckPatch Update') {
+	stage('Report Generation') {
 	 when { 
           expression {stageChoice == "SecurityBatch"}
         }
        steps {
           script {
-			ReportGeneration.groovy()
+			ReportGeneration()
 			echo "Check Patch Stage completed"
            }
         }
